@@ -11,9 +11,22 @@
 |
 */
 
-Route::get('/', 'HomeController@home');
-Route::get('/register', 'AuthController@register');
-Route::post('/welcome', 'AuthController@welcome');
+Route::get('/', function() {
+    return view("items.table");
+});
+
 Route::get('/master', function(){
-    return view("master");
+    return view("adminlte.master");
+});
+
+Route::get('/items',function() {
+    return view('items.index');
+});
+
+Route::get('/items/create', function() {
+    return view('items.create');
+});
+
+Route::get('/data-tables', function() {
+    return view("items.data-tables");
 });
